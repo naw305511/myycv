@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نواف فهد المطيري | مطور ويب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- شريط التنقل -->
+    <nav class="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">نواف المطيري</h1>
+            <div class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="#about" class="hover:text-blue-200 transition">عنّي</a>
+                <a href="#education" class="hover:text-blue-200 transition">التعليم</a>
+                <a href="#experience" class="hover:text-blue-200 transition">الخبرة</a>
+                <a href="#skills" class="hover:text-blue-200 transition">المهارات</a>
+                <a href="#projects" class="hover:text-blue-200 transition">المشاريع</a>
+                <a href="#contact" class="hover:text-blue-200 transition">اتصل بي</a>
+            </div>
+            <button class="md:hidden" id="menuButton">☰</button>
+        </div>
+        <!-- القائمة المنسدلة للجوال -->
+        <div class="mobile-menu hidden md:hidden container mx-auto mt-4" id="mobileMenu">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="hover:text-blue-200 transition">عنّي</a>
+                <a href="#education" class="hover:text-blue-200 transition">التعليم</a>
+                <a href="#experience" class="hover:text-blue-200 transition">الخبرة</a>
+                <a href="#skills" class="hover:text-blue-200 transition">المهارات</a>
+                <a href="#projects" class="hover:text-blue-200 transition">المشاريع</a>
+                <a href="#contact" class="hover:text-blue-200 transition">اتصل بي</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <header class="bg-white py-16 fade-in">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">مرحباً، أنا <span class="text-blue-600">نواف فهد المطيري</span></h2>
+                <p class="text-xl text-gray-600 mb-6">مطور ويب متخصص في تقنية البرمجة وتطوير الويب</p>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">تواصل معي</a>
+                    <a href="#skills" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">مهاراتي</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-2">
+                    <img src="img/myphoto.jpeg" alt="صورة نواف المطيري" class="rounded-full w-64 h-64 object-cover border-4 border-white" onerror="this.src='https://via.placeholder.com/300'">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم عني -->
+    <section id="about" class="py-16 bg-gray-50 fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">المحف الوظيفي</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    يشرفني أن أقدم سيرتي الذاتية وأمل أن أكون إضافة قيمة للفريق. أسعى لتطوير مهاراتي واكتساب مهارات جديدة والاستفادة من ذوي الخبرة والكفاءة لتحقيق أهداف العمل. أتميز بالمبادرة في العمل وإتقان استخدام برامج الأوفيس والعمل الجماعي.
+                </p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-700 mb-2">الاسم</h3>
+                        <p>نواف فهد ذياب المطيري</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-700 mb-2">البريد الإلكتروني</h3>
+                        <p>naw305511@gmail.com</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-700 mb-2">الهاتف</h3>
+                        <p>0508308358</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التعليم -->
+    <section id="education" class="py-16 bg-white fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">التعليم</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 mb-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">دبلوم تقنية البرمجة وتطوير الويب</h3>
+                    <p class="text-gray-600 mb-2">كلية ثادق</p>
+                    <p class="text-gray-500">يونيو 2024</p>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6 text-center">الدورات التدريبية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-blue-600">دورة تطوير تطبيقات الويب</h4>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-blue-600">دورة جداول البيانات Excel</h4>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-blue-600">دورة معالجة النصوص Word</h4>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-blue-600">دورة إدارة الوقت</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخبرة العملية -->
+    <section id="experience" class="py-16 bg-gray-50 fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">الخبرات العملية</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">اخصائي عمليات موارد بشرية</h3>
+                    <p class="text-gray-600 mb-2">شركة جسر التقدم للمقاولات الرياض</p>
+                    <p class="text-gray-500">يناير 2024 - حتى الآن</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">تدريب تعاوني</h3>
+                    <p class="text-gray-600 mb-2">كلية القيادة والأركان للقوات المسلحة، الرياض</p>
+                    <p class="text-gray-500">مارس 2024 - يونيو 2024</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">سكرتير</h3>
+                    <p class="text-gray-600 mb-2">شركة سمة، الرياض، مركز الملك عبدالله المالي</p>
+                    <p class="text-gray-500">يناير 2023 - يناير 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="py-16 bg-white fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">مشاريعي</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
+                    <div class="bg-gray-100 h-48 flex items-center justify-center">
+                        <span class="text-gray-400">صورة المشروع</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">مشروع تطوير موقع ويب</h3>
+                        <p class="text-gray-600 mb-4">وصف مختصر للمشروع وأهم الميزات التي تم تطويرها.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
+                    <div class="bg-gray-100 h-48 flex items-center justify-center">
+                        <span class="text-gray-400">صورة المشروع</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">نظام إدارة قاعدة بيانات</h3>
+                        <p class="text-gray-600 mb-4">نظام لإدارة البيانات باستخدام SQL وواجهة مستخدم بسيطة.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">SQL</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
+                    <div class="bg-gray-100 h-48 flex items-center justify-center">
+                        <span class="text-gray-400">صورة المشروع</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">تطبيق إدارة المهام</h3>
+                        <p class="text-gray-600 mb-4">تطبيق لتنظيم المهام اليومية وإدارة الوقت.</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات -->
+    <section id="skills" class="py-16 bg-gray-50 fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">المهارات</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">المهارات التقنية</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                                HTML & CSS
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                                SQL
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                                برامج Microsoft Office
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">المهارات الشخصية</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+                                المبادرة في العمل
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+                                خدمة العملاء
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+                                العمل ضمن الفريق
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+                                إدارة الوقت
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">المهارات التقنية المتقدمة</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">HTML & CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">SQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Microsoft Office</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">اللغات</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-medium">العربية</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">اللغة الأم</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">الإنجليزية</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">متوسط</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">تواصل معي</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">معلومات التواصل</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium">الهاتف</p>
+                                <p>0508308358</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium">البريد الإلكتروني</p>
+                                <p>naw305511@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-medium">العنوان</p>
+                                <p>الرياض، حي الجبيلة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">أرسل لي رسالة</h3>
+                    <form action="https://formsubmit.co/naw305511@gmail.com" method="POST" class="space-y-4">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">الاسم</label>
+                            <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+                            <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
+                            <textarea rows="4" name="message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 نواف فهد المطيري. جميع الحقوق محفوظة.</p>
+            <div class="flex justify-center space-x-6 space-x-reverse mt-4">
+                <a href="#" class="hover:text-blue-300 transition">LinkedIn</a>
+                <a href="#" class="hover:text-blue-300 transition">Twitter</a>
+                <a href="#" class="hover:text-blue-300 transition">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // القائمة المنسدلة للجوال
+        document.getElementById('menuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // تأثيرات التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
