@@ -340,29 +340,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">أرسل لي رسالة</h3>
-                    <form action="https://formsubmit.co/naw305511@gmail.com" method="POST" class="space-y-4">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">الاسم</label>
-                            <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
-                            <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
-                            <textarea rows="4" name="message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
-                            إرسال الرسالة
-                        </button>
-                    </form>
-                </div>
+<div class="bg-white p-6 rounded-lg shadow-lg">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">أرسل لي رسالة</h3>
+    <form id="customForm" class="space-y-4">
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">الاسم</label>
+            <input type="text" name="name"
+                class="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+            <input type="email" name="email"
+                class="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
+            <textarea rows="4" name="message"
+                class="text-black w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required></textarea>
+        </div>
+        <button type="submit"
+            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+            إرسال الرسالة
+        </button>
+    </form>
+</div>
             </div>
         </div>
     </section>
@@ -402,5 +406,43 @@
             });
         });
     </script>
+    <script>
+    document.getElementById('customForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // إيقاف الإرسال الحقيقي للنموذج
+        // يمكنك هنا تنفيذ أي منطق تحقق أو حفظ
+        window.location.href = "thank-you.html"; // استبدل بالرابط الذي تريده
+    });
+</script>
+<script>
+    const form = document.getElementById('customForm');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    // التحقق إذا تم الإرسال مسبقًا
+    if(localStorage.getItem('formSubmitted')) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "تم الإرسال سابقًا";
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // منع الإرسال إذا تم سابقًا
+        if(localStorage.getItem('formSubmitted')) {
+            alert('لقد قمت بإرسال الرسالة مسبقًا.');
+            return;
+        }
+
+        // وضع علامة تم الإرسال
+        localStorage.setItem('formSubmitted', 'true');
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = "تم الإرسال";
+
+        setTimeout(() => {
+            window.location.href = "thank-you.html";
+        }, 1000);
+    });
+</script>
+
 </body>
 </html>
